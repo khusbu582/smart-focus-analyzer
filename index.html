@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Smart Focus Analyzer</title>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <h1>📊 Smart Focus Analyzer</h1>
+    <p class="subtitle">Track study time vs wasted time</p>
+
+    <div class="card">
+      <label>📘 Subject</label>
+      <input type="text" id="subject" placeholder="DSA / Math / DBMS">
+
+      <label>⚠️ Distraction Reason</label>
+      <select id="distractionReason">
+        <option value="Phone">Phone</option>
+        <option value="Social Media">Social Media</option>
+        <option value="Overthinking">Overthinking</option>
+        <option value="Noise">Noise</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <!-- TIMER -->
+      <div class="timer" id="timer">00:00:00</div>
+
+      <div class="btn-group">
+        <button class="focus" onclick="startFocus()">Start / Focus</button>
+        <button class="distract" onclick="markDistracted()">Distracted</button>
+        <button class="end" onclick="endSession()">End Session</button>
+      </div>
+    </div>
+
+    <div class="card report">
+      <h2>📈 Today’s Analysis</h2>
+      <p id="today"></p>
+      <p id="topDistraction"></p>
+      <p id="suggestion"></p>
+    </div>
+
+    <div class="card">
+      <canvas id="dailyChart"></canvas>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
